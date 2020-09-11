@@ -5,6 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

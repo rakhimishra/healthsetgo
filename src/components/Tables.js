@@ -40,7 +40,6 @@ export default function Tables() {
       });
   }, []);
 
-
   useEffect(() => {
     fetch(
       "https://api.healthsetgo.info/api/v2/candidate/assignment/community/search",
@@ -58,6 +57,7 @@ export default function Tables() {
       .then((data) => {
         console.log("Success:", JSON.parse(data.results[0].users));
         console.log(data.results[0].count);
+
         setTeachers(data.results[0].count);
         setIsLoaded(true);
         setItems(JSON.parse(data.results[0].users));
@@ -141,35 +141,41 @@ export default function Tables() {
   } else {
     return (
       <>
-        
-        <Data student={student} teachers={teachers} />
-        <Button
-          variant="primary"
-          name="students"
-          onClick={submitHandler}
-          style={{ margin: "10px",float: "right"}}
-        >
-          Students
-        </Button>
-        <Button variant="primary" name="teachers" onClick={submitHandler1} style={{margin: "10px",float: "right"}}>
-          Teachers
-        </Button>
-
-        <Button variant="warning" style={{ float: "right", margin: "10px" }}>
-          <CSVLink
-            data={items}
-            style={{ textDecoration: "none", float: "right" }}
+        <div className="container">
+          <Data student={student} teachers={teachers} />
+          <Button
+          
+            variant="primary"
+            name="students"
+            onClick={submitHandler}
+            style={{ margin: "10px", float: "right" , boxShadow: "-5px 15px 20px -6px #C0C0C0"}}
           >
-            Export as CSV file
-          </CSVLink>
-        </Button>
-        <div className="Container">
-        <BootstrapTable
-          keyField="hsgId"
-          data={items}
-          columns={columns}
-          pagination={paginationFactory()}
-        />
+            Students
+          </Button>
+          <Button
+            variant="primary"
+            name="teachers"
+            onClick={submitHandler1}
+            style={{ margin: "10px", float: "right", boxShadow: "-5px 15px 20px -6px #C0C0C0" }}
+          >
+            Teachers
+          </Button>
+
+          <Button variant="warning" style={{ float: "right", margin: "10px" , boxShadow: "-5px 15px 20px -6px #C0C0C0"}}>
+            <CSVLink
+              data={items}
+              style={{ textDecoration: "none", float: "right" }}
+            >
+              Export as CSV file
+            </CSVLink>
+          </Button>
+
+          <BootstrapTable
+            keyField="hsgId"
+            data={items}
+            columns={columns}
+            pagination={paginationFactory()}
+          />
         </div>
       </>
     );
