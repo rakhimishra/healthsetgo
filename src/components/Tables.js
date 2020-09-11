@@ -2,43 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import Data from "./Data";
 import { Button } from "react-bootstrap";
-import { ExportCSV } from "./ExportCSV";
+
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
+import { CSVLink } from "react-csv";
 export default function Tables() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [student, setStudent] = useState("");
   const [teachers, setTeachers] = useState("");
-  // useEffect(() => {
-  //   fetch(
-  //     "https://api.healthsetgo.info/api/v2/candidate/assignment/community/search",
-  //     {
-  //       method: "GET", // or 'PUT'
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         authorization:
-  //           "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhZGRyZXNzIjpudWxsLCJyb2xlIjpbeyJyb2xlX3R5cGVfaWQiOjEwLCJjcmVhdGVkX3RpbWUiOiIyMDE3LTEwLTA0VDA3OjQ0OjI0LjI4NDUxIiwibW9kaWZpZWRfdGltZSI6IjIwMTctMTAtMDRUMDc6NDQ6MjQuMjg0NTEiLCJ1c2VyX2lkIjoxLCJyb2xlX2Rlc2MiOiJHdWVzdCIsImlkIjoxLCJyb2xlX2FjdGl2ZSI6MX1dLCJwcm9maWxlIjpudWxsLCJjdXN0b20iOm51bGwsImV4dF9wcm92aWRlcl9pZCI6bnVsbCwidXVpZCI6IkhTR18xIiwidG9rZW4iOm51bGwsInVzZXJfYWN0aXZlIjoxLCJwaG9uZSI6bnVsbCwib3JnYW5pemF0aW9uIjpudWxsLCJpZCI6MSwiaWF0IjoxNTA3MTE1ODg1LCJlbWFpbCI6bnVsbCwidXNlcm5hbWUiOiJndWVzdHVzZXJAaHNnLmNvbSIsInN0YXR1cyI6MjAwfQ==.P1iOu3IgTvv5WvinQ7yEIZCQC2bg58QF8RJAq82T_aU=",
-  //         "x-select": '{"inRoleTypeId": 20, "inLimit": 10, "inOffset":0}',
-  //       },
-    
-  //     }
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("Success:", JSON.parse(data.results[0].users));
-  //       console.log(data.results[0].count);
-  //       setTeachers(data.results[0].count);
-  //       setIsLoaded(true);
-  //       setItems(JSON.parse(data.results[0].users));
-  //     })
-  //     .catch((error) => {
-  //       setIsLoaded(true);
-  //       setError(error);
-  //       console.error("Error:", error);
-  //     });
-  // }, []);
 
   useEffect(() => {
     fetch(
@@ -87,7 +60,6 @@ export default function Tables() {
         setStudent(data.results[0].count);
         setIsLoaded(true);
         setItems(JSON.parse(data.results[0].users));
-
       })
       .catch((error) => {
         setIsLoaded(true);
@@ -154,15 +126,20 @@ export default function Tables() {
         </Button>
 
         <Data student={student} teachers={teachers} />
+        <Button variant="warning" style={{ float: "right", margin: "10px" }}>
+          <CSVLink
+            data={items}
+            style={{ textDecoration: "none", float: "right" }}
+          >
+            Export as CSV file
+          </CSVLink>
+        </Button>
         <BootstrapTable
           keyField="hsgId"
           data={items}
           columns={columns}
           pagination={paginationFactory()}
         />
-        <div className="col-md-4 center">
-          {/* <ExportCSV csvData={this.state.customers} fileName={this.state.fileName} /> */}
-        </div>
       </>
     );
   }
