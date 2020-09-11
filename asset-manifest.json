@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/healthsetgo/static/css/main.5f361e03.chunk.css",
-    "main.js": "/healthsetgo/static/js/main.63a0e14d.chunk.js",
-    "main.js.map": "/healthsetgo/static/js/main.63a0e14d.chunk.js.map",
+    "main.js": "/healthsetgo/static/js/main.d0f0436f.chunk.js",
+    "main.js.map": "/healthsetgo/static/js/main.d0f0436f.chunk.js.map",
     "runtime-main.js": "/healthsetgo/static/js/runtime-main.f99c260b.js",
     "runtime-main.js.map": "/healthsetgo/static/js/runtime-main.f99c260b.js.map",
     "static/css/2.0d38d0cc.chunk.css": "/healthsetgo/static/css/2.0d38d0cc.chunk.css",
-    "static/js/2.c7e04718.chunk.js": "/healthsetgo/static/js/2.c7e04718.chunk.js",
-    "static/js/2.c7e04718.chunk.js.map": "/healthsetgo/static/js/2.c7e04718.chunk.js.map",
+    "static/js/2.db975966.chunk.js": "/healthsetgo/static/js/2.db975966.chunk.js",
+    "static/js/2.db975966.chunk.js.map": "/healthsetgo/static/js/2.db975966.chunk.js.map",
     "index.html": "/healthsetgo/index.html",
-    "precache-manifest.0a995e430d79b18dffbddd38fcd8b72f.js": "/healthsetgo/precache-manifest.0a995e430d79b18dffbddd38fcd8b72f.js",
+    "precache-manifest.cd5a898f5ab5100e9862b1baf1139706.js": "/healthsetgo/precache-manifest.cd5a898f5ab5100e9862b1baf1139706.js",
     "service-worker.js": "/healthsetgo/service-worker.js",
     "static/css/2.0d38d0cc.chunk.css.map": "/healthsetgo/static/css/2.0d38d0cc.chunk.css.map",
     "static/css/main.5f361e03.chunk.css.map": "/healthsetgo/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.c7e04718.chunk.js.LICENSE.txt": "/healthsetgo/static/js/2.c7e04718.chunk.js.LICENSE.txt",
+    "static/js/2.db975966.chunk.js.LICENSE.txt": "/healthsetgo/static/js/2.db975966.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/healthsetgo/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f99c260b.js",
     "static/css/2.0d38d0cc.chunk.css",
-    "static/js/2.c7e04718.chunk.js",
+    "static/js/2.db975966.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.63a0e14d.chunk.js"
+    "static/js/main.d0f0436f.chunk.js"
   ]
 }
